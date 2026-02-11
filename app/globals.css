@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* ---------- Base Fonts ---------- */
+body {
+  font-family: var(--font-suse, var(--font-geist-sans)), sans-serif;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-bricolage), sans-serif;
+}
+
+/* Code / numeric text */
+code,
+pre,
+.mono {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+/* ---------- Neon Glow Animation ---------- */
+@keyframes neonPulse {
+  0%,
+  100% {
+    text-shadow:
+      0 0 5px #3b82f6,
+      0 0 15px #3b82f6,
+      0 0 30px #2563eb;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #60a5fa,
+      0 0 25px #3b82f6,
+      0 0 50px #2563eb;
+  }
+}
+
+.neon-text {
+  animation: neonPulse 2.5s infinite ease-in-out;
+}
+
+/* ---------- Utility Font Classes ---------- */
+.font-bricolage {
+  font-family: var(--font-bricolage), sans-serif;
+}
+
+.font-suse {
+  font-family: var(--font-suse), sans-serif;
+}
+
+.font-geist {
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-geist-mono), monospace;
+}
