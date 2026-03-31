@@ -352,11 +352,11 @@ const PolicyPage = () => {
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
             Waltergates Ghana Limited — Commitment to transparency, security, and individual privacy rights
           </p>
-          <div className="flex flex-wrap justify-center gap-4 mt-8 text-sm text-white/80">
+          {/* <div className="flex flex-wrap justify-center gap-4 mt-8 text-sm text-white/80">
             <div className="flex items-center gap-2"><Calendar className="w-4 h-4" /> Effective: February 2026</div>
             <div className="flex items-center gap-2"><FileText className="w-4 h-4" /> Document ID: WGL-PRIV-2026-001 | v1.0</div>
             <div className="flex items-center gap-2"><Users className="w-4 h-4" /> Policy Owner: Head of Technology / DPS</div>
-          </div>
+          </div> */}
         </div>
       </div>
 
