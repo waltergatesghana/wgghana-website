@@ -470,33 +470,7 @@ const PolicyPage = () => {
           ))}
         </div>
 
-        {/* Footer Contact */}
-        <div className="mt-12 p-6 bg-gradient-to-r from-[#eef2fc] to-[#e6f4f0] rounded-2xl border border-[#cbdde6]">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div>
-              <p className="text-sm text-gray-700">
-                <span className="font-semibold text-gray-900">Document ID:</span> WGL-PRIV-2026-001 v1.0
-              </p>
-              <p className="text-sm text-gray-700 mt-1">
-                <span className="font-semibold text-gray-900">Review Cycle:</span> At least annually and upon major legal, operational, or technology change
-              </p>
-              <p className="text-sm text-gray-700 mt-1">
-                <span className="font-semibold text-gray-900">Security Incident Channel:</span>{' '}
-                <a href="mailto:security@waltergatesgh.com" className="text-[#1f6e7a] hover:underline font-medium">
-                  security@waltergatesgh.com
-                </a>
-              </p>
-            </div>
-            <div className="text-right">
-              <p className="text-sm text-gray-600">
-                <span className="font-semibold text-gray-900">Regulator:</span> Data Protection Commission, Ghana
-              </p>
-              <p className="text-sm text-gray-600 mt-1">
-                Questions? Contact our Data Protection Supervisor
-              </p>
-            </div>
-          </div>
-        </div>
+     
 
         {/* Last Updated */}
         <div className="mt-8 text-center">
