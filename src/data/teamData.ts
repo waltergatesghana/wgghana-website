@@ -20,62 +20,17 @@ export const teamSections: TeamSection[] = [
       {
         name: "MR. SOLOMON K. ANDOH",
         role: "CEO",
-        image: "/Andoh2.png",
+        image: "/andoh2.png",
         description: "Visionary leader with over 15 years of experience in technology and business transformation, driving innovation and strategic growth.",
-        linkedin: "https://linkedin.com/in/solomonandoh",
+        linkedin: "https://www.linkedin.com/in/solomon-andoh-36348a29",
         twitter: "https://twitter.com/solomonandoh",
         email: "solomon.andoh@company.com",
       },
     ],
   },
-
-
-  {
-    title: "Board of Directors",
-    members: [
-      {
-        name: "MR. SOLOMON K. ANDOH",
-        role: "CHIEF EXECUTIVE OFFICER",
-        image: "/Andoh.png",
-        description: "Visionary leader with over 15 years of experience in technology and business transformation, driving innovation and strategic growth.",
-        linkedin: "https://linkedin.com/in/solomonandoh",
-        twitter: "https://twitter.com/solomonandoh",
-        email: "solomon.andoh@company.com",
-      },
-      {
-        name: "MR. KAKRA KWABI ADISI",
-        role: "CHIEF OPERATIONS OFFICER",
-        image: "/Kakra.png",
-        description: "Strategic operations expert with proven track record in streamlining processes and optimizing business efficiency across multiple sectors.",
-        linkedin: "https://linkedin.com/in/kakraadisi",
-        twitter: "https://twitter.com/kakraadisi",
-        email: "kakra.adisi@company.com",
-      },
-      
-      {
-        name: "MR. EUNAS KOFI ESHUN",
-        role: "HEAD, LEGAL AFFAIRS",
-        image: "/unas.jpg",
-        description: "Accomplished legal counsel specializing in corporate law, compliance, and regulatory frameworks with deep industry knowledge.",
-        linkedin: "https://linkedin.com/in/eunaseshun",
-        twitter: "https://twitter.com/eunaseshun",
-        email: "eunas.eshun@company.com",
-      },
-    ],
-  },
-
   {
     title: "Management Team",
     members: [
-      {
-        name: "MR. SOLOMON K. ANDOH",
-        role: "CHIEF EXECUTIVE OFFICER",
-        image: "/Andoh.png",
-        description: "Visionary leader with over 15 years of experience in technology and business transformation, driving innovation and strategic growth.",
-        linkedin: "https://linkedin.com/in/solomonandoh",
-        twitter: "https://twitter.com/solomonandoh",
-        email: "solomon.andoh@company.com",
-      },
       {
         name: "MR. KAKRA KWABI ADISI",
         role: "CHIEF OPERATIONS OFFICER",
@@ -99,7 +54,7 @@ export const teamSections: TeamSection[] = [
         role: "HEAD, LEGAL AFFAIRS",
         image: "/unas.jpg",
         description: "Accomplished legal counsel specializing in corporate law, compliance, and regulatory frameworks with deep industry knowledge.",
-        linkedin: "https://linkedin.com/in/eunaseshun",
+        linkedin: "https://www.linkedin.com/in/eunas-eshun-522b46137",
         twitter: "https://twitter.com/eunaseshun",
         email: "eunas.eshun@company.com",
       },
