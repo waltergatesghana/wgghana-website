@@ -45,7 +45,7 @@ const TeamCard = ({
 
         {/* Dark overlay - always visible on mobile when active, hover on desktop */}
         <div
-          className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-black/30 transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-linear-to-t from-black/95 via-black/70 to-black/30 transition-opacity duration-300 ${
             isActive ? 'opacity-100' : 'opacity-0 lg:group-hover:opacity-100'
           }`}
         />
@@ -103,7 +103,7 @@ const TeamCard = ({
 
         {/* Description badge - always visible when not active, hidden when active or hovered */}
         <div
-          className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent text-white p-4 transition-opacity duration-300 pointer-events-none ${
+          className={`absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/90 to-transparent text-white p-4 transition-opacity duration-300 pointer-events-none ${
             isActive ? 'opacity-0' : 'opacity-100 lg:group-hover:opacity-0'
           }`}
         >
@@ -157,7 +157,7 @@ const CEOCard = ({
 
         {/* Dark overlay - always visible on mobile when active, hover on desktop */}
         <div
-          className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-black/30 transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-linear-to-t from-black/95 via-black/70 to-black/30 transition-opacity duration-300 ${
             isActive ? 'opacity-100' : 'opacity-0 lg:group-hover:opacity-100'
           }`}
         />
@@ -215,7 +215,7 @@ const CEOCard = ({
 
         {/* Name badge - always visible on mobile when not active, hidden when active */}
         <div
-          className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent text-white p-4 transition-opacity duration-300 pointer-events-none ${
+          className={`absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/90 to-transparent text-white p-4 transition-opacity duration-300 pointer-events-none ${
             isActive ? 'opacity-0' : 'opacity-100 lg:group-hover:opacity-0'
           }`}
         >
@@ -228,9 +228,21 @@ const CEOCard = ({
 };
 
 const CEOMessageCard = () => {
+  const [expanded, setExpanded] = React.useState(false);
+  const cardRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (expanded && cardRef.current) {
+      setTimeout(() => {
+        cardRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    }
+  }, [expanded]);
+
   return (
     <motion.div
-      className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-lg p-8 md:p-12 relative overflow-hidden"
+      ref={cardRef}
+      className="bg-linear-to-br from-blue-50 to-white rounded-xl shadow-lg p-8 md:p-12 relative overflow-hidden"
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
@@ -240,20 +252,98 @@ const CEOMessageCard = () => {
         <div className="flex items-center gap-3 mb-6">
           <Quote className="w-8 h-8 text-[#2596be]" />
           <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
-            Message from CEO
+            A Message from the Chief Executive Officer of Waltergates Ghana Limited
           </h3>
         </div>
 
-        <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6 italic">
-          "Waltergates Ghana Limited is committed to delivering innovative and
-          reliable solutions that drive sustainable growth. Through excellence,
-          professionalism, and strong partnerships, our team continues to create
-          value and shape the future of our industry."
-        </p>
+        <div className={`space-y-5 text-gray-700 text-base md:text-lg leading-relaxed ${expanded ? "" : "relative"}`}>
+          <p>
+            For more than a decade, <strong>Waltergates Ghana Limited</strong> has stood where
+            ambition meets execution — engineering the digital, financial, and human
+            infrastructure of a continent the world can no longer afford to overlook.
+            Ghanaian by origin and global by intention, we deliver work of international
+            caliber across software development, fintech and payment platforms, fiber optic
+            and telecommunications engineering, advanced security systems, and strategic
+            advisory.
+          </p>
 
-        <p className="text-gray-900 font-semibold text-lg">
-          - MR. SOLOMON K. ANDOH
-        </p>
+          {!expanded && (
+            <button
+              type="button"
+              onClick={() => setExpanded((current) => !current)}
+              className="mt-4 inline-flex items-center rounded-full bg-[#2596be] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#1f7ca0]"
+            >
+              Read full message
+            </button>
+          )}
+
+          {expanded && (
+            <>
+              <p>
+                <strong>To our clients</strong>, we offer not service, but stewardship. Every mandate
+                entrusted to us is honoured as a covenant — defended with discipline, delivered
+                with excellence, and remembered long after the contract closes. You do not simply
+                hire Waltergates; you gain a team that treats your ambitions as our own and your
+                success as the only true measure of ours. When you rise, we rise — and the
+                foundations we lay together are built to outlast us both.
+              </p>
+
+              <p>
+                <strong>To our partners</strong>, we offer a counterpart who understands both the
+                boardrooms of London, Dubai, and New York and the marketplaces of Accra and Kumasi
+                — a bridge built precisely for those who intend to cross into Africa&apos;s defining
+                commercial century, and to cross it well. We offer trust forged in a decade of
+                delivery — and a name that honours every handshake it accepts.
+              </p>
+
+              <p>
+                <strong>To our investors</strong>, we offer the discipline of over a decade of measured
+                growth and a portfolio of scalable platforms. We offer return measured in both
+                capital and consequence — from USSD and fintech rails to the Informal Sector
+                Empowerment Platforms — designed to convert capital into compounding returns,
+                alongside the formalization of the informal sector and the empowerment of more
+                than five million (5,000,000) untapped entrepreneurs.
+              </p>
+
+              <p>
+                <strong>To the exceptional talent</strong> weighing where to invest a career, we offer
+                purpose worthy of a lifetime: the chance to write the operating systems of nations
+                and shape institutions that future generations will inherit.
+              </p>
+
+              <p>
+                If you believe, as we do, that the most enduring fortunes of this century will be
+                made by those who build the future rather than wait for it, then take your place
+                beside us. The work is significant. The hour is now. And history, as it always
+                does, will remember those who stood on the right side of it.
+              </p>
+
+              <p className="text-gray-900 font-semibold text-lg pt-2">
+                Solomon Andoh
+                <br />
+                Chief Executive Officer
+                <br />
+                Waltergates Ghana Limited
+                <br />
+                Innovation. Integrity. Impact.
+              </p>
+            </>
+          )}
+
+          {expanded && (
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-0" />
+          )}
+        </div>
+
+        {expanded && (
+          <button
+            type="button"
+            onClick={() => setExpanded((current) => !current)}
+            className="mt-4 inline-flex items-center rounded-full bg-[#2596be] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#1f7ca0]"
+          >
+            Show less
+          </button>
+        )}
       </div>
 
       {/* Decorative circles */}
@@ -317,12 +407,13 @@ const AboutUsPage = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="overflow-hidden rounded-lg shadow-lg h-96"
+                className="relative overflow-hidden rounded-lg shadow-lg h-96"
               >
-                <img
+                <Image
                   src="/aboutbanner.png"
                   alt="Who We Are"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </motion.div>
 
@@ -374,12 +465,13 @@ const AboutUsPage = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="overflow-hidden rounded-lg shadow-lg h-96"
+                className="relative overflow-hidden rounded-lg shadow-lg h-96"
               >
-                <img
+                <Image
                   src="/herofive.jpg"
                   alt="Mission and Vision"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </motion.div>
             </div>
@@ -415,7 +507,7 @@ const AboutUsPage = () => {
 
           {/* Team Members Section */}
           {/* Team Members Section */}
-          {teamSections.map((section, index) => (
+          {teamSections.map((section) => (
             <div key={section.title} className="mb-16 last:mb-0">
               <div className="text-center mb-10">
                 <h2 className="font-bold text-2xl md:text-4xl mb-3 text-gray-800 uppercase tracking-wider">
